@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "com.github.siccity.xnode": {
-      "version": "file:C:/Users/KR3V37K0/Desktop/UNITY addons/xNode-1.8.0",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {}
-    },
     "com.unity.burst": {
       "version": "1.8.15",
       "depth": 1,
