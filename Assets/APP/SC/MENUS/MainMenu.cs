@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] Transform trans_slots;
     void Start()
     {
+        Transition.Instance.FadeOut();
         panel_save_load.SetActive(false);
     }
     async public void btn_Start()
@@ -39,6 +40,7 @@ public class MainMenu : MonoBehaviour
         if (_preview.is_New) SaveLoad.CreateNewSave(_preview);
         else SaveLoad.Load(_preview);
 
+        await Transition.Instance.FadeIn();
         LoadScene.StartLoading("HUB");
     }
     public async Task btn_DeleteSave(SavePreview _preview)
