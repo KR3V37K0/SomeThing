@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.WSA;
+//using UnityEngine.WSA;
 
 public static class SaveLoad
 {
     public static SaveData current_save;
+    public static SettingsData current_settings;
+
     public static bool inLoading = false;
     async public static Task Save()
     {
@@ -60,6 +62,27 @@ public static class SaveLoad
         PlayerPrefs.DeleteKey("save_" + _preview.slot);
         PlayerPrefs.Save();
     }
+
+
+
+    async public static Task LoadSetting()
+    {
+        if (PlayerPrefs.HasKey("settings"))
+        {
+            current_settings= JsonUtility.FromJson<SettingsData>(PlayerPrefs.GetString("settings"));
+        }
+        else
+        {
+            current_settings=new SettingsData();
+            SaveSettings();
+        }
+    }
+    async public static Task SaveSettings()
+    {
+        PlayerPrefs.SetString("settings",
+            JsonUtility.ToJson(current_settings)
+        );
+    }
 }
 
 
@@ -88,5 +111,23 @@ public class SaveData
     public SaveData(SavePreview _preview)
     {
         preview = _preview;
+    }
+}
+
+[System.Serializable]
+public class SettingsData
+{
+    public string language;
+    public float camera_sensetive;
+
+    public SettingsData(string _language, float _camera_sensetive)
+    {
+        language = _language;
+        camera_sensetive = _camera_sensetive;
+    }
+    public SettingsData() 
+    { 
+        language="eng";
+        camera_sensetive = 1;
     }
 }
