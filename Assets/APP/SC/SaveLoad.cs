@@ -119,15 +119,18 @@ public class SettingsData
 {
     public string language;
     public float camera_sensetive;
+    public int window_mode;
 
-    public SettingsData(string _language, float _camera_sensetive)
+    public SettingsData(string _language, float _camera_sensetive, int window_mode)
     {
         language = _language;
         camera_sensetive = _camera_sensetive;
+        this.window_mode = window_mode;
     }
     public SettingsData() 
     { 
         language="eng";
         camera_sensetive = 1;
+        window_mode = 0;
     }
 }

@@ -23,7 +23,7 @@ public class LocalizedText : MonoBehaviour
         await Task.Delay(50);
         LoadText();
     }
-    async void LoadText()
+    async public void LoadText()
     {
         while (keyword == null)
         {

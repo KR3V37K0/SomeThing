@@ -28,13 +28,6 @@ public class MainMenu : MonoBehaviour
 
 
     }
-    /*public static async Task btn_LoadSave(SavePreview _preview)
-    {
-        if (_preview.is_New) SaveLoad.CreateNewSave(_preview);
-        else SaveLoad.Load(_preview);
-
-        LoadScene.StartLoading("HUB");
-    }*/
     public async Task btn_LoadSave(SavePreview _preview)
     {
         if (_preview.is_New) SaveLoad.CreateNewSave(_preview);
@@ -48,6 +41,10 @@ public class MainMenu : MonoBehaviour
         await SaveLoad.DeleteSave(_preview);
         
         btn_Start();
+    }
+    public void btn_Exit()
+    {
+        Application.Quit();
     }
 }
 

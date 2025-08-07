@@ -1,13 +1,16 @@
+using Mono.Data.Sqlite;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Threading.Tasks;
-using Mono.Data.Sqlite;
 using UnityEngine;
 
 public static class DatabaseCommands
 {
-    private static readonly string ConnectionString = SetDataBaseClass.SetDataBase("Database_Localization.db");
+    static string dbPath = Path.Combine(Application.streamingAssetsPath, "Database_Localization.db");
+    static string ConnectionString = $"URI=file:{dbPath}";
+    //private static readonly string ConnectionString = SetDataBaseClass.SetDataBase("Database_Localization.db");
 
     public static async Task<string> GetLocalization(string keyword)
     {
