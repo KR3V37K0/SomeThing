@@ -1,5 +1,47 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7327090877882004869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e2736971971d98408d5ca3a7023aa0d, type: 3}
+  m_Name: Node_End
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 472, y: 104}
+  ports:
+    keys:
+    - In
+    - Out
+    values:
+    - _fieldName: In
+      _node: {fileID: -7327090877882004869}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Out
+        node: {fileID: 2887898114589825437}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out
+      _node: {fileID: -7327090877882004869}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  In: 0
+  Out: 0
 --- !u!114 &-4512160811699079876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,6 +101,7 @@ MonoBehaviour:
   - {fileID: 5374352072275922593}
   - {fileID: 2887898114589825437}
   - {fileID: -4512160811699079876}
+  - {fileID: -7327090877882004869}
   start: {fileID: -4512160811699079876}
   current: {fileID: 123255085612850363}
 --- !u!114 &123255085612850363
@@ -106,12 +149,8 @@ MonoBehaviour:
       _dynamic: 0
   In: 0
   Out: 0
-  speacker:
-  - Anna
-  - "\u0410\u043D\u043D\u0430"
-  text:
-  - Hello, im Anya!
-  - "\u041F\u0440\u0438\u0432\u0435\u0442, \u044F \u0410\u043D\u044F!"
+  speacker: Cube
+  text: 1
 --- !u!114 &2887898114589825437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,19 +186,18 @@ MonoBehaviour:
       _node: {fileID: 2887898114589825437}
       _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: In
+        node: {fileID: -7327090877882004869}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   In: 0
   Out: 0
-  speacker:
-  - Anna
-  - "\u0410\u043D\u044F"
-  text:
-  - Nice
-  - "\u041E\u0442\u043B\u0438\u0447\u043D\u043E"
+  speacker: Cube
+  text: 3
 --- !u!114 &5374352072275922593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,10 +243,5 @@ MonoBehaviour:
       _dynamic: 0
   In: 0
   Out: 0
-  speacker:
-  - Victor
-  - "\u0412\u0438\u043A\u0442\u043E\u0440"
-  text:
-  - Hello< Anya! How do you do?
-  - "\u041F\u0440\u0438\u0432\u0435\u0442, \u0410\u043D\u044F! \u041A\u0430\u043A
-    \u0443 \u0442\u0435\u0431\u044F \u0434\u0435\u043B\u0430?"
+  speacker: Char
+  text: 2

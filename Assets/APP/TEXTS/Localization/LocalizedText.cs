@@ -16,12 +16,11 @@ public class LocalizedText : MonoBehaviour
     {
         EventBus.act_Language_Changed -= LoadText;
     }
-    async void Start()
+    void Awake()
     {
         txt = GetComponent<TMP_Text>();
         keyword = txt.text;
-        await Task.Delay(50);
-        LoadText();
+        if (keyword != "") LoadText();
     }
     async public void LoadText()
     {
@@ -31,7 +30,7 @@ public class LocalizedText : MonoBehaviour
         }
         txt.text = await Localization.Get(keyword);
     }
-    public void ChangeText_To(string _keyword)
+    public async void ChangeText_To(string _keyword)
     {
         keyword = _keyword;
         LoadText();

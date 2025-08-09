@@ -8,4 +8,12 @@ public class Esc : MonoBehaviour
         await Transition.Instance.FadeIn();
         LoadScene.StartLoading("MAIN_MENU");
     }
+    private void OnEnable()
+    {
+        InputMapSwitcher.Switch(InputMapSwitcher.Maps.UI);
+    }
+    private void OnDisable()
+    {
+        InputMapSwitcher.Switch(InputMapSwitcher.Maps.Gameplay);
+    }
 }

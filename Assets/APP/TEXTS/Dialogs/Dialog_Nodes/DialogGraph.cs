@@ -11,14 +11,19 @@ public class DialogGraph : NodeGraph
 
     public void Starting()
     {
-        Debug.Log("working");
-        EventBus.act_Next_Speach += NextSpeach;
+        Subscrible(true);
         current = start;
         current.Execute();
+    }
+    void Subscrible(bool b)
+    {
+        if(b) EventBus.act_Next_Speach += NextSpeach;
+        else EventBus.act_Next_Speach -= NextSpeach;
     }
     void NextSpeach()
     {
         current = current.GetOutputPort("Out").Connection.node as Base;
+        if(current is node_End) Subscrible(false);
         current.Execute();
     }
 }
