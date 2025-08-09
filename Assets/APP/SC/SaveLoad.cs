@@ -120,17 +120,26 @@ public class SettingsData
     public string language;
     public float camera_sensetive;
     public int window_mode;
+    public int fps;
+    public bool vsync;
+    public int quality_graphics;
 
-    public SettingsData(string _language, float _camera_sensetive, int window_mode)
+    public SettingsData(string _language, float _camera_sensetive, int window_mode,int _fps, bool _vsync, int _quality_graphics)
     {
         language = _language;
         camera_sensetive = _camera_sensetive;
         this.window_mode = window_mode;
+        fps = _fps;
+        vsync = _vsync;
+        quality_graphics = _quality_graphics;
     }
     public SettingsData() 
     { 
         language="eng";
         camera_sensetive = 1;
         window_mode = 0;
+        fps = 60;
+        vsync = false;
+        quality_graphics = 1;
     }
 }
