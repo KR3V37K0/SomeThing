@@ -101,7 +101,6 @@ public class Settings : MonoBehaviour
         // 0 = noFrame
         // 1 = fulscreen
         // 2 = windowed
-        Debug.Log(_mode + " " + btn_windows[_mode]);
         for (int i = 0; i < btn_windows.Length; i++)
         {
             btn_windows[i].interactable = _mode != i;
