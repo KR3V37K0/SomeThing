@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using XNode;
 
@@ -26,33 +27,25 @@ public class DialogGraph : NodeGraph
         {
             EventBus.act_Next_Speach += NextSpeach;
             EventBus.act_Select_Choice += SelectChoice;
+            EventBus.act_End_Dialogue += Ending;
         }
-        else 
-        { 
+        else
+        {
             EventBus.act_Next_Speach -= NextSpeach;
             EventBus.act_Select_Choice -= SelectChoice;
+            EventBus.act_End_Dialogue -= Ending;
         }
     }
     void NextSpeach()
     {
-
         current = current.GetOutputPort("Out").Connection.node as Base;
-        if(current is node_End) Subscrible(false);
 
         current.Execute();
-    }   
+    }
     void SelectChoice(int _index)
     {
-        Debug.Log("get signal " + _index);
         current = current.GetOutputPort($"Answer {_index}").Connection.node as Base;
-        if (current is node_End) Subscrible(false);
 
         current.Execute();
-        /*NodePort port = current.GetOutputPort($"Answer {_index}");
-        if (port != null && port.IsConnected)
-        {
-            (port.Connection.node as Base)?.Execute();
-        }*/
     }
-    
 }

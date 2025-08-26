@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class DialogsReader : MonoBehaviour
 {
-    
+
 
     [Header("___GRAPH___")]
     public DialogGraph current_dialog;
@@ -44,7 +44,6 @@ public class DialogsReader : MonoBehaviour
         foreach (ChoiceButton b in trans_choices.GetComponentsInChildren<ChoiceButton>())
         {
             objs_choice_button.Add(b.gameObject);
-            Debug.Log("add btn "+b.gameObject.name);
         }
         InputMapSwitcher.Switch(InputMapSwitcher.Maps.UI);
         canvas.SetActive(true);
@@ -54,48 +53,36 @@ public class DialogsReader : MonoBehaviour
     void End_Dialog()
     {
         InputMapSwitcher.Switch(InputMapSwitcher.Maps.Gameplay);
-        current_dialog = null;
         canvas.SetActive(false);
+        current_dialog = null; 
     }
     async void ViewSpeach(string _name, string _text)
     {
         obj_btn_next.SetActive(true);
         trans_choices.gameObject.SetActive(false);
-        Debug.Log(_name + " : " + _text);
-        //txt_text.text = _text;
-        txt_text.ChangeText_To("Dialog."+current_dialog.name+"."+_text);
+        txt_text.ChangeText_To("Dialog." + current_dialog.name + "." + _text);
         txt_name.ChangeText_To("Speacker." + _name);
-        await Task.Delay(10);
+
+        await Task.Delay(50);
         size_txt_name.enabled = false;
         size_txt_name.enabled = true;
     }
     public void btn_NextSpeach()
     {
-        Debug.Log("---next---");
         EventBus.act_Next_Speach?.Invoke();
     }
     void Choice_Visualizer(string[] _var)
     {
-        foreach (string s in _var)
-        {
-            Debug.Log(s);
-        }
         obj_btn_next.SetActive(false);
         trans_choices.gameObject.SetActive(true);
         for (int i = 0; i < objs_choice_button.Count; i++)
         {
-            Debug.Log(i < _var.Length);
             if (i < _var.Length)
             {
-                
                 objs_choice_button[i].gameObject.SetActive(true);
                 objs_choice_button[i].GetComponentInChildren<LocalizedText>().ChangeText_To(_var[i]);
             }
             else objs_choice_button[i].gameObject.SetActive(false);
-
-
-            //trans_choices.GetChild(i).gameObject.SetActive(i<_var.Length);
         }
     }
-
 }

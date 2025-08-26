@@ -25,7 +25,7 @@ public class Interactor : MonoBehaviour
     }
     private void OnTriggerStay(Collider _coll)
     {
-         i = _coll.gameObject.GetComponentInChildren<IInteractable>();
+        i = _coll.gameObject.GetComponentInChildren<IInteractable>();
     }
     private void OnTriggerExit(Collider _coll)
     {

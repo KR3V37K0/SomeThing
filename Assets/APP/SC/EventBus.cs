@@ -12,4 +12,5 @@ public static class EventBus
     public static Action act_Language_Changed;
     public static Action<DialogGraph> act_Start_Dialogue;
     public static Action<string[]> act_Choice;
+    public static Action<int> act_Switch_Camera;
 }

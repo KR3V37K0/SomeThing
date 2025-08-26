@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Node Speach
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 856, y: -168}
+  position: {x: 840, y: -168}
   ports:
     keys:
     - In
@@ -37,7 +37,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: In
-        node: {fileID: -4742241225471972226}
+        node: {fileID: -7939192838336945419}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -47,6 +47,52 @@ MonoBehaviour:
   Out: 0
   speacker: Cube
   text: "\u0432\u0430\u0443, \u0442\u044B \u0432\u044B\u0431\u0440\u0430\u043B  1"
+--- !u!114 &-7939192838336945419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b605ec53c806daa45a58c212cabdba6d, type: 3}
+  m_Name: Node_Switch Camera
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1192, y: -344}
+  ports:
+    keys:
+    - In
+    - Out
+    values:
+    - _fieldName: In
+      _node: {fileID: -7939192838336945419}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Out
+        node: {fileID: -8777775527515870916}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out
+      _node: {fileID: -7939192838336945419}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: In
+        node: {fileID: -4742241225471972226}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  In: 0
+  Out: 0
+  camera: 2
 --- !u!114 &-7327090877882004869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +165,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Out
-        node: {fileID: -8777775527515870916}
+        node: {fileID: -7939192838336945419}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -176,7 +222,7 @@ MonoBehaviour:
   m_Name: Node_Start
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -376, y: 104}
+  position: {x: -632, y: 88}
   ports:
     keys:
     - In
@@ -197,7 +243,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: In
-        node: {fileID: 123255085612850363}
+        node: {fileID: 5281788287232485436}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -227,8 +273,15 @@ MonoBehaviour:
   - {fileID: -8777775527515870916}
   - {fileID: 4983757404194675876}
   - {fileID: -4742241225471972226}
+  - {fileID: 5281788287232485436}
+  - {fileID: 7269461385889293854}
+  - {fileID: -7939192838336945419}
   start: {fileID: -4512160811699079876}
   current: {fileID: -7327090877882004869}
+  cameras:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &123255085612850363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,7 +295,7 @@ MonoBehaviour:
   m_Name: Node Speach
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -168, y: 104}
+  position: {x: -392, y: 88}
   ports:
     keys:
     - In
@@ -254,7 +307,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Out
-        node: {fileID: -4512160811699079876}
+        node: {fileID: 5281788287232485436}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -289,7 +342,7 @@ MonoBehaviour:
   m_Name: Node_Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 552, y: 104}
+  position: {x: 456, y: 104}
   ports:
     keys:
     - In
@@ -363,7 +416,7 @@ MonoBehaviour:
   m_Name: Node Speach
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 248, y: 104}
+  position: {x: 104, y: 88}
   ports:
     keys:
     - In
@@ -375,7 +428,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Out
-        node: {fileID: 5374352072275922593}
+        node: {fileID: 7269461385889293854}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -445,6 +498,52 @@ MonoBehaviour:
   speacker: Cube
   text: "\u043E \u043D\u0435\u0442, \u0442\u044B \u0432\u044B\u0431\u0440\u0430\u043B
     2"
+--- !u!114 &5281788287232485436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b605ec53c806daa45a58c212cabdba6d, type: 3}
+  m_Name: Node_Switch Camera
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -408, y: -56}
+  ports:
+    keys:
+    - In
+    - Out
+    values:
+    - _fieldName: In
+      _node: {fileID: 5281788287232485436}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Out
+        node: {fileID: -4512160811699079876}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out
+      _node: {fileID: 5281788287232485436}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: In
+        node: {fileID: 123255085612850363}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  In: 0
+  Out: 0
+  camera: 0
 --- !u!114 &5374352072275922593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,7 +557,7 @@ MonoBehaviour:
   m_Name: Node Speach
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 40, y: 104}
+  position: {x: -152, y: 88}
   ports:
     keys:
     - In
@@ -482,7 +581,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: In
-        node: {fileID: 2887898114589825437}
+        node: {fileID: 7269461385889293854}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -492,3 +591,49 @@ MonoBehaviour:
   Out: 0
   speacker: Char
   text: 2
+--- !u!114 &7269461385889293854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b605ec53c806daa45a58c212cabdba6d, type: 3}
+  m_Name: Node_Switch Camera
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 104, y: -56}
+  ports:
+    keys:
+    - In
+    - Out
+    values:
+    - _fieldName: In
+      _node: {fileID: 7269461385889293854}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Out
+        node: {fileID: 5374352072275922593}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out
+      _node: {fileID: 7269461385889293854}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: In
+        node: {fileID: 2887898114589825437}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  In: 0
+  Out: 0
+  camera: 1
