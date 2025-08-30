@@ -646,6 +646,169 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Packing"",
+            ""id"": ""9c3ec0d7-da63-4618-a6d8-d3866c9b342d"",
+            ""actions"": [
+                {
+                    ""name"": ""MouseDelta"",
+                    ""type"": ""Value"",
+                    ""id"": ""eca861a8-0ddf-4a30-be30-8fc7759e495a"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Esc"",
+                    ""type"": ""Button"",
+                    ""id"": ""4c414b7c-aa9e-4f4e-a5f2-6e405696a683"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Grab"",
+                    ""type"": ""Button"",
+                    ""id"": ""4f543239-1bda-49a1-9750-73a072caed47"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MousePosition"",
+                    ""type"": ""Value"",
+                    ""id"": ""b409eff4-9c8d-4967-814e-cb33198b85be"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Rotate"",
+                    ""type"": ""Button"",
+                    ""id"": ""7ceb7c57-2e91-4142-a30f-e4679c23ab33"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""cf8d160f-28aa-4299-a916-4924043545af"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseDelta"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4dec5b63-2f00-4a0c-992b-4ee73f03118e"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseDelta"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2d0e192a-da23-43b5-a9f9-f4162cddfb59"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Esc"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b98c4541-328c-4506-9cd1-0992439490ca"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Esc"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""190a8cdb-2857-44d4-96c3-476b2be5c7ec"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Grab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""00786ee4-42e3-438a-b114-f7ad6def530a"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Grab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1f263904-a1f7-41d9-9d78-ca533629eac8"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MousePosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""54f46dba-9e88-4c9a-b908-916152d7090a"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MousePosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e642bf22-d731-4887-80a3-77fe37d1e165"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e866bf84-0262-4e40-af18-9bb840e44dce"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -685,12 +848,20 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         m_UI_Cancel = m_UI.FindAction("Cancel", throwIfNotFound: true);
         m_UI_Point = m_UI.FindAction("Point", throwIfNotFound: true);
         m_UI_Click = m_UI.FindAction("Click", throwIfNotFound: true);
+        // Packing
+        m_Packing = asset.FindActionMap("Packing", throwIfNotFound: true);
+        m_Packing_MouseDelta = m_Packing.FindAction("MouseDelta", throwIfNotFound: true);
+        m_Packing_Esc = m_Packing.FindAction("Esc", throwIfNotFound: true);
+        m_Packing_Grab = m_Packing.FindAction("Grab", throwIfNotFound: true);
+        m_Packing_MousePosition = m_Packing.FindAction("MousePosition", throwIfNotFound: true);
+        m_Packing_Rotate = m_Packing.FindAction("Rotate", throwIfNotFound: true);
     }
 
     ~@Inputs()
     {
         UnityEngine.Debug.Assert(!m_Gameplay.enabled, "This will cause a leak and performance issues, Inputs.Gameplay.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, Inputs.UI.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Packing.enabled, "This will cause a leak and performance issues, Inputs.Packing.Disable() has not been called.");
     }
 
     /// <summary>
@@ -1031,6 +1202,146 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="UIActions" /> instance referencing this action map.
     /// </summary>
     public UIActions @UI => new UIActions(this);
+
+    // Packing
+    private readonly InputActionMap m_Packing;
+    private List<IPackingActions> m_PackingActionsCallbackInterfaces = new List<IPackingActions>();
+    private readonly InputAction m_Packing_MouseDelta;
+    private readonly InputAction m_Packing_Esc;
+    private readonly InputAction m_Packing_Grab;
+    private readonly InputAction m_Packing_MousePosition;
+    private readonly InputAction m_Packing_Rotate;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "Packing".
+    /// </summary>
+    public struct PackingActions
+    {
+        private @Inputs m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public PackingActions(@Inputs wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "Packing/MouseDelta".
+        /// </summary>
+        public InputAction @MouseDelta => m_Wrapper.m_Packing_MouseDelta;
+        /// <summary>
+        /// Provides access to the underlying input action "Packing/Esc".
+        /// </summary>
+        public InputAction @Esc => m_Wrapper.m_Packing_Esc;
+        /// <summary>
+        /// Provides access to the underlying input action "Packing/Grab".
+        /// </summary>
+        public InputAction @Grab => m_Wrapper.m_Packing_Grab;
+        /// <summary>
+        /// Provides access to the underlying input action "Packing/MousePosition".
+        /// </summary>
+        public InputAction @MousePosition => m_Wrapper.m_Packing_MousePosition;
+        /// <summary>
+        /// Provides access to the underlying input action "Packing/Rotate".
+        /// </summary>
+        public InputAction @Rotate => m_Wrapper.m_Packing_Rotate;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_Packing; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="PackingActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(PackingActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="PackingActions" />
+        public void AddCallbacks(IPackingActions instance)
+        {
+            if (instance == null || m_Wrapper.m_PackingActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PackingActionsCallbackInterfaces.Add(instance);
+            @MouseDelta.started += instance.OnMouseDelta;
+            @MouseDelta.performed += instance.OnMouseDelta;
+            @MouseDelta.canceled += instance.OnMouseDelta;
+            @Esc.started += instance.OnEsc;
+            @Esc.performed += instance.OnEsc;
+            @Esc.canceled += instance.OnEsc;
+            @Grab.started += instance.OnGrab;
+            @Grab.performed += instance.OnGrab;
+            @Grab.canceled += instance.OnGrab;
+            @MousePosition.started += instance.OnMousePosition;
+            @MousePosition.performed += instance.OnMousePosition;
+            @MousePosition.canceled += instance.OnMousePosition;
+            @Rotate.started += instance.OnRotate;
+            @Rotate.performed += instance.OnRotate;
+            @Rotate.canceled += instance.OnRotate;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="PackingActions" />
+        private void UnregisterCallbacks(IPackingActions instance)
+        {
+            @MouseDelta.started -= instance.OnMouseDelta;
+            @MouseDelta.performed -= instance.OnMouseDelta;
+            @MouseDelta.canceled -= instance.OnMouseDelta;
+            @Esc.started -= instance.OnEsc;
+            @Esc.performed -= instance.OnEsc;
+            @Esc.canceled -= instance.OnEsc;
+            @Grab.started -= instance.OnGrab;
+            @Grab.performed -= instance.OnGrab;
+            @Grab.canceled -= instance.OnGrab;
+            @MousePosition.started -= instance.OnMousePosition;
+            @MousePosition.performed -= instance.OnMousePosition;
+            @MousePosition.canceled -= instance.OnMousePosition;
+            @Rotate.started -= instance.OnRotate;
+            @Rotate.performed -= instance.OnRotate;
+            @Rotate.canceled -= instance.OnRotate;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="PackingActions.UnregisterCallbacks(IPackingActions)" />.
+        /// </summary>
+        /// <seealso cref="PackingActions.UnregisterCallbacks(IPackingActions)" />
+        public void RemoveCallbacks(IPackingActions instance)
+        {
+            if (m_Wrapper.m_PackingActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="PackingActions.AddCallbacks(IPackingActions)" />
+        /// <seealso cref="PackingActions.RemoveCallbacks(IPackingActions)" />
+        /// <seealso cref="PackingActions.UnregisterCallbacks(IPackingActions)" />
+        public void SetCallbacks(IPackingActions instance)
+        {
+            foreach (var item in m_Wrapper.m_PackingActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_PackingActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="PackingActions" /> instance referencing this action map.
+    /// </summary>
+    public PackingActions @Packing => new PackingActions(this);
     private int m_SchemeSchemeIndex = -1;
     /// <summary>
     /// Provides access to the input control scheme.
@@ -1122,5 +1433,48 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnClick(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Packing" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="PackingActions.AddCallbacks(IPackingActions)" />
+    /// <seealso cref="PackingActions.RemoveCallbacks(IPackingActions)" />
+    public interface IPackingActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "MouseDelta" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMouseDelta(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Esc" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnEsc(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Grab" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnGrab(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "MousePosition" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMousePosition(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Rotate" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRotate(InputAction.CallbackContext context);
     }
 }

@@ -11,7 +11,8 @@ public class InputMapSwitcher : MonoBehaviour
     public enum Maps
     {
         UI,
-        Gameplay
+        Gameplay,
+        Packing
     }
     public static void Switch(Maps _map)
     {
