@@ -7,14 +7,20 @@ public class GrabedObject : MonoBehaviour, IGrabable
     public void OnGrab(Graber _graber)
     {
         graber = _graber;
-        transform.GetChild(0).gameObject.layer = 2;
+        foreach (BoxCollider box in GetComponentsInChildren<BoxCollider>())
+        {
+            box.isTrigger = true;
+        }
         rb.isKinematic = true;
     }
     public void OnRelease()
     {
         graber = null;
         rb.isKinematic = false;
-        transform.GetChild(0).gameObject.layer = 6;
+        foreach (BoxCollider box in GetComponentsInChildren<BoxCollider>())
+        {
+            box.isTrigger = false;
+        }
     }
     void OnTriggerStay(Collider col)
     {
@@ -24,16 +30,24 @@ public class GrabedObject : MonoBehaviour, IGrabable
             {
                 graber.OnGrid(col.gameObject.GetComponentInParent<Grid>());
             }
+            else if (col.gameObject.layer == 6)
+            {
+                graber.OnCrossing(true);
+            }
         }
     }
     void OnTriggerExit(Collider col)
     {
-        
+
         if (graber != null)
         {
             if (col.gameObject.tag == "grid")
             {
                 graber.ExitGrid();
+            }
+            else if (col.gameObject.layer == 6)
+            {
+                graber.OnCrossing(false);
             }
         }
     }

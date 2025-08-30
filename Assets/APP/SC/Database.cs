@@ -44,7 +44,7 @@ public static class DatabaseCommands
         }
         catch (Exception e)
         {
-            Debug.LogError($"[DB] GetLocalization() failed: {e.Message}");
+            //Debug.LogError($"[DB] GetLocalization() failed: {e.Message}");
             return "~ERROR~ keyword: " + keyword;
         }
     }

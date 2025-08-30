@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using PrimeTween;
+using System.Threading.Tasks;
+using Unity.VisualScripting;
 
 public class Graber : MonoBehaviour
 {
@@ -7,9 +10,12 @@ public class Graber : MonoBehaviour
     InputActionMap map;
     Grid grid;
     GameObject obj_grabed;
+    [SerializeField] AnimationCurve _ease_rotate;
+    static AnimationCurve ease_rotate;
     void Awake()
     {
         map = input.actions.FindActionMap("Packing");
+        ease_rotate = _ease_rotate;
     }
     void OnEnable()
     {
@@ -23,8 +29,11 @@ public class Graber : MonoBehaviour
         map.FindAction("MousePosition").performed -= OnMouse;
         map.FindAction("Rotate").performed -= Rotate;
     }
-    public void OnGrab(InputAction.CallbackContext ctx)
+    void OnGrab(InputAction.CallbackContext ctx)
     {
+        //ПРОВЕРЯЕМ НА ПЕРЕСЕЧЕНИЕ
+        if (isCrossing) return;
+
         //ОТПУСКАЕМ
         if (obj_grabed != null)
         {
@@ -48,40 +57,51 @@ public class Graber : MonoBehaviour
             }
         }
 
-        
+
 
     }
     Ray ray;
     RaycastHit hit;
-    public void OnMouse(InputAction.CallbackContext ctx)
+    void OnMouse(InputAction.CallbackContext ctx)
     {
         if (obj_grabed == null) return;
 
         //ДВИГАЕМ ВЗЯТЫЙ ОБЪЕКТ
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit,100, ~LayerMask.GetMask("Grabable")))
         {
             // СВОБОДНО
             if (grid == null)
             {
-                obj_grabed.transform.position = hit.point;
+                Tween.Position(obj_grabed.transform, hit.point, 0.2f);
+                //obj_grabed.transform.position = hit.point;
             }
             // ПО СЕТКЕ
             else
             {
-                obj_grabed.transform.position = grid.GetCellCenterWorld( grid.WorldToCell(hit.point));            
+                Tween.Position(obj_grabed.transform, grid.GetCellCenterWorld(grid.WorldToCell(hit.point)), 0.2f);
+                //obj_grabed.transform.position = grid.GetCellCenterWorld( grid.WorldToCell(hit.point));            
             }
         }
 
     }
 
     Vector3 rotation_vector = new Vector3(0, 90, 0);
-    void Rotate(InputAction.CallbackContext ctx)
+    bool inRotation = false;
+    async void Rotate(InputAction.CallbackContext ctx)
     {
+        if (inRotation)
+        {
+            return;
+        }
         if (obj_grabed == null) return;
 
-        if(ctx.performed)
-            obj_grabed.transform.Rotate(rotation_vector);
+        if (ctx.performed)
+        {
+            inRotation = true;
+            await Tween.Rotation(obj_grabed.transform, obj_grabed.transform.rotation.eulerAngles + rotation_vector, 0.4f, ease_rotate);
+            inRotation = false;
+        }
     }
     public void ExitGrid()
     {
@@ -92,7 +112,32 @@ public class Graber : MonoBehaviour
         grid = _component;
     }
 
+    bool isCrossing = false;
+    public void OnCrossing(bool _bool)
+    {
 
+        if (_bool != isCrossing) ChangeObjCrossColor();
+        isCrossing = _bool;
+
+    }
+    void ChangeObjCrossColor()
+    {
+        if (isCrossing)
+        {
+            foreach (Renderer rend in obj_grabed.GetComponentsInChildren<Renderer>())
+            {
+                rend.material.SetFloat("_Tinting", 0);
+            }
+        }
+        else
+        {
+            foreach (Renderer rend in obj_grabed.GetComponentsInChildren<Renderer>())
+            {
+                rend.material.SetFloat("_Tinting", 1);
+            }
+            
+        }
+    }
 
 }
 public interface IGrabable
