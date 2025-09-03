@@ -10,7 +10,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] TMP_Text txt_button;
     [SerializeField] Image img_button;
     bool inInteraction = false;
-    IInteractable i;
+    IInteractable[] i;
     private void OnEnable()
     {
         EventBus.act_End_Dialogue += End_Interaction;
@@ -25,7 +25,7 @@ public class Interactor : MonoBehaviour
     }
     private void OnTriggerStay(Collider _coll)
     {
-        i = _coll.gameObject.GetComponentInChildren<IInteractable>();
+        i = _coll.gameObject.GetComponentsInChildren<IInteractable>();
     }
     private void OnTriggerExit(Collider _coll)
     {
@@ -37,8 +37,12 @@ public class Interactor : MonoBehaviour
         {
             if (context.phase == InputActionPhase.Started)
             {
-                i.OnInteract();
                 inInteraction = true;
+                foreach (IInteractable _interaction in i) 
+                {
+                    _interaction.OnInteract();
+                }           
+                
             }
         } 
     }

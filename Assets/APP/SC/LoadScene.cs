@@ -28,6 +28,9 @@ public class LoadScene : MonoBehaviour
 
     async void Start()
     {
+#if UNITY_EDITOR
+        load_speed = load_speed * 3;
+#endif
         loader = SceneManager.LoadSceneAsync(loaded_scene);
         loader.allowSceneActivation = false;
 

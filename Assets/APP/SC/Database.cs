@@ -38,7 +38,6 @@ public static class DatabaseCommands
                         }
                     }
                 }
-
                 return "~ERROR~ keyword: " + keyword;
             });
         }
@@ -84,5 +83,6 @@ public static class DatabaseCommands
             return "";
         }
     }
+
 
 }
